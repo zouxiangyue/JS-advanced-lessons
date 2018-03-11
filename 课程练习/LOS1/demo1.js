@@ -1,0 +1,9 @@
+a=1;
+if(false){
+    a=11;
+}
+console.log(a);//1
+if(true){
+    a=111;
+};
+console.log(a)//111
