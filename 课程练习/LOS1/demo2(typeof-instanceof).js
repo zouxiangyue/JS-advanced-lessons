@@ -33,3 +33,17 @@ console.log(typeof RegExp); //function
 console.log(typeof Error); //function
 console.log(typeof Math); //object
 console.log(typeof JSON);//object
+
+console.log(typeof NaN);//number
+console.log(typeof Infinity);//number
+
+console.log({}instanceof Object);//true
+console.log([]instanceof Object);//true
+console.log([]instanceof Array);//true
+
+console.log(NaN==NaN)//false
+console.log(1===1.0);//true
+console.log(3/0);//Infinity
+console.log(0/3);//0
+console.log(-3/0);//-Intinity
+console.log("\n")//空白
