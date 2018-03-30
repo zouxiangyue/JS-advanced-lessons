@@ -1,5 +1,6 @@
 //JS脚本语言边解析边运行
 //var
+//解析提升
 console.log(a);//undefind，a未定义，不会报错
 var a=2;
 console.log(a);//2
@@ -46,6 +47,7 @@ fun2();//fun2
 function fun2(){console.log("fun2")};
 var fun3=function fun2(){console.log("fun3")};
 fun3();//fun3
+
 //等价于
 function fun2(){console.log("fun2")};
 var fun3;//fun2
