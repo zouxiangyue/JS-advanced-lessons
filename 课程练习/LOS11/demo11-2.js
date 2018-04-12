@@ -1,5 +1,4 @@
 //IIFE的变量共享
-
 function f(){
     var getNum=[];
     var j;
@@ -25,17 +24,6 @@ function f(){
  tmp[9]();//10,tmp[0,...,9]的值都是10
 
  //等价于
- function f(){
-    var getNum=[];
-    var i=0;
-    for(;i<10;i++){
-            getNum[i]=function(){return i;}
-        };
-    return getNum;
- };
- var tmp=f();
- tmp[1]();
- 
  //解决变量共享
  function f(){
     var getNum=[];
