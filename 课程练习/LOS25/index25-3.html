@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ducement</title>
+    <style>
+        #btn1,#btn2{
+            height:50px;
+            width:60px;
+        }
+    </style>
+</head>
+<body>
+    <button  id="btn1" onclick='showMes(event)'>按钮1</button>
+    <button  id="btn2">按钮2</button>
+    <script>
+        /*
+        使用事件处理程序
+        1.HTML事件处理程序:事件的代码放在HTML内部
+        缺点:js和html连接紧密,不方便修改,修改可能同时需要改动JS和html
+        */
+        var btn1=document.getElementById('btn1')
+        var btn2=document.getElementById('btn2')
+        function showMes(e){
+            alert(e);//[object MouseEvent]
+        };
+        //删除事件
+        btn1.onclick=null;
+        //2.DOM0级事件处理程序
+        btn2.onclick=function(){
+            alert("DOM0事件")
+        }
+        btn2.onclick=null;
+    </script>
+</body>
+</html>
