@@ -12,7 +12,9 @@ window.onload=function(){//页面加载事件
     }
 }
 //页面未加载完,无法识别div2,报错
+/*
 var div2=document.getElementById("div2");
 div2.onmousemove=function(){
     alert('报错')
 }
+*/
