@@ -106,20 +106,5 @@ arr.find(function(e){
     return e>50;
 })//3
 
-//属性结构赋值和object的默认
-'a'in object;
-
-
-var obj={a:1,b:2}
-var obj2=Object.create(obj);
-obj2.c=3;
-Object.keys(obj2);
-["c"]
-obj2
-{c: 3}
-'a' in obj2;
-true
-obj2.__proto__
-{a: 1, b: 2}
 
 
