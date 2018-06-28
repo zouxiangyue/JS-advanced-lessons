@@ -21,9 +21,12 @@ var obj={
         console.log(this.name)
     }
 };
-obj.Symbol['say']=function(){
-    console.log(this.name)
+var s=Symbol('say')
+obj[s]=function(){
+    console.log('Symbol')
 }
+//调用Symbol类型属性
+obj[s]()//Symbol
 
 //使用Symbol是用[]，而不是用点操作符
 var MySymbol=Symbol('foo');
@@ -38,5 +41,57 @@ var obj={
 Object.defineProperty(a, mySymbol, { value: 'Hello!' });
 obj[MySymbol]//'hello'
 
+var MySymbol=Symbol('obj');
+var s='ss';
+var a='aa';
+var fun=Symbol('fun');
+var obj={
+    name:'Jack',
+    [MySymbol]:'obj',
+    [s]:'ss',//普通属性对待
+    a:'a',
+    say(){
+        console.log(this.name)
+    },
+    [fun](){
+        console.log(this[MySymbol]);
+    }
+};
+//属性调用,Symbol必须用[]
+obj.name//"Jack"
+obj['name'];//"Jack"
+obj.MySymbol// undefined
+obj[MySymbol]// "obj"
+obj[Symbol('obj')]//undefined //因为Symbol('obj')===MySymbol //false
+obj[s]//"ss"
+obj.s//undefined
+obj['ss']//"ss"
+obj.ss//"ss"
+obj.a//"a"
+obj['a']//"a"
+obj[fun]()// obj
 
+obj[Symbol()]='fjka'//"fjka"
+obj[Symbol()]//undefined
 
+//Symbol遍历
+var obj = {};
+var a = Symbol('a');
+var b = Symbol('b');
+obj[a] = 'Hello';
+obj[b] = 'World';
+//Object.getOwnPropertySymbols()//获得对象中Symbol类型的属性的值
+var objectSymbols = Object.getOwnPropertySymbols(obj);
+console.log(objectSymbols);// [Symbol(a), Symbol(b)]
+
+//遍历实例二
+var obj = {};
+var foo = Symbol("foo");
+Object.defineProperty(obj, foo, {
+    value: "foo bar",
+});
+for (var i in obj) {
+    console.log(i); // 无输出
+}
+Object.getOwnPropertyNames(obj);// []
+Object.getOwnPropertySymbols(obj);// [Symbol(foo)]
