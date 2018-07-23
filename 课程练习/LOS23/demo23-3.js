@@ -65,8 +65,8 @@ var j1=JSON.stringify(
 )
 console.log(j1)//undefined
 /*
-第一次传入的k="",v={x:1,y:2,str:'replace',arr:[11,22,[undefined,false,Symbol('JSON')]]},
-执行else,返回v=undefined,原序列化字符串整个被修改为undefined,而在对象的序列化中,undefined会被忽略
+第一次传入的k=""(typeof k=string),v={x:1,y:2,str:'replace',arr:[11,22,[undefined,false,Symbol('JSON')]]},
+执行if,返回v=undefined,原序列化字符串整个被修改为undefined,而在对象的序列化中,undefined会被忽略
 所以再向内无法找到k,v,则退出函数,最终只是输出undefined
 */
 

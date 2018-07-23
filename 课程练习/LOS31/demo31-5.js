@@ -100,3 +100,14 @@ m.has(1);//false
 m.size //2
 m.clear();
 m.size //0
+
+var map=new map([
+    ['a',1],
+    ['b',2]
+])
+console.log(typeof map.keys())//object
+console.log(typeof map.values()); //object
+console.log(typeof map.entries())//object
+map.keys()//MapIterator {"a", "b"}
+map.values() //MapIterator {1, 2}
+map.entries() //MapIterator {"a" => 1, "b" => 2}

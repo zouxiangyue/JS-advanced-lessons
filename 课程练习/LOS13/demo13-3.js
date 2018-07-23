@@ -11,7 +11,7 @@ var obj={
 console.log(obj.x);//调用obj里的函数x();11
 obj.x=22//调用obj的函数x(val),改变_x
 //若改为obj.x()=22或obj.x(22)都报错
-console.歧义log(obj.x,obj._x);//22 22
+console.log(obj.x,obj._x);//22 22
 obj.hasOwnProperty("x");//访问器属性,true
 obj.hasOwnProperty("_x");//数据属性,true
 
